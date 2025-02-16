@@ -32,7 +32,7 @@ export class Client {
       }
     }
   }
-  post(path: string, body: any) {
+  post(path: string, body?: any) {
     let id = this.id
     this.id += 1
     return new Promise<any>((resolve, reject) => {
@@ -78,7 +78,7 @@ interface PendingRequest {
 interface Request {
   id: number
   path: string
-  body: any
+  body?: any
 }
 interface Response {
   id: number
