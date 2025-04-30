@@ -7,8 +7,8 @@ const v = '0'
 export class Client {
   channel = new Channel()
   sender: Sender
-  constructor(port: number = defaultHubPort) {
-    this.sender = this.channel.connect(port, {
+  constructor(address?: string | number) {
+    this.sender = this.channel.connect(address ?? Bun.env.HUB ?? 1997, {
       headers: async () => ({ auth: await sign(), v }),
     })
   }
