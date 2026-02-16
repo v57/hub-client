@@ -2,7 +2,6 @@ import { sign } from './keychain'
 import type { Sender } from 'channel/channel'
 import { Channel } from 'channel/client'
 
-const defaultHubPort = Number(Bun.env.HUBPORT ?? 1997)
 const v = '0'
 export class Client {
   channel = new Channel()
